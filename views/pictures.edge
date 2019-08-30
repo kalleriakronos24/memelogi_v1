@@ -1,0 +1,47 @@
+@layout('layouts.app')
+
+
+@section('content')
+
+
+
+  @each(postz in posts)
+         
+  <div class="container-fluid" style="background: white; max-width: 600px;">
+    <div class="row" style="margin-top: 8px;">
+      <div class="mx-40" style="margin: 0px auto;">
+
+         
+        <div class="post-preview">
+          <br>
+          <div align="center">
+            <div class="img-wrapper">
+                <img src="{{ postz.image }}" style="max-height: 520px;
+                max-width: 550px;" class="img-responsive">
+              </div>
+        </div>
+         
+            <br>
+        <p style="font-family: Quicksand; margin-left: 16px;"> {{ postz.caption }}</p>
+
+            <p style="font-family: Quicksand; margin-left: 16px;">Posted
+              on {{ postz.time }} {{ postz.posted_on.toDateString() }}</p>
+
+            <p style="margin-left: 16px; margin-top: 20px; font-family: Quicksand;">
+              Sc : {{ postz.source }}
+            </p>
+         <div class="l-c-section">
+        
+         <a href="/post/p/{{ postz.postp_id }}" class="btn-l-c">See More...</a>
+         </div>
+        </div>
+      
+          
+      </div>
+
+    </div>
+  
+  </div>
+  @endeach
+<br>
+@endsection

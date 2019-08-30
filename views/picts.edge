@@ -1,0 +1,44 @@
+@layout('layouts.app')
+
+@section('content')
+
+  <!-- Page Header -->
+
+  <div class="container-fluid" style="background: white; max-width: 600px;">
+    <div class="row" style="margin-top: 8px;">
+      <div class="mx-40" style="margin: 0px auto;">
+
+         
+        <div class="post-preview">
+          <br>
+          <div class="img-wrapper">
+            <img src="{{ post.image }}" style="max-height: 520px;
+            max-width: 550px;" class="img-responsive">
+          </div>
+            <br>
+            <p style="font-family: Quicksand;">Posted
+              on {{ post.createdAt }}</p>
+
+
+            <p style="margin-top: 20px; font-family: Quicksand;">
+              Sc : {{ post.description }}
+            </p>
+         
+            <div class="l-c-section">
+            <a href="#" class="btn-l-c"><i class="far fa-thumbs-up"></i> Like (0)</a>
+                <a href="/picts/{{ post._id }}" class="btn-l-c"><i class="far fa-comment-dots"></i> Comment (0)</a>
+             </div>
+         
+        </div>
+    
+    
+        <!-- Pager -->
+       
+      </div>
+
+    </div>
+  
+  </div>
+<hr>
+
+@endsection
